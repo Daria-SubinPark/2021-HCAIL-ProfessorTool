@@ -34,4 +34,4 @@ const MainBar = ({cName, sNum}) =>
     );
 }
 
-export default MainBar
+export default MainBar;
