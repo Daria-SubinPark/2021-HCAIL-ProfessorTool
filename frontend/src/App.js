@@ -4,6 +4,7 @@ import './component/chart/BarChart'
 import BarChart from "./component/chart/BarChart";
 import MainBar from "./component/common/MainBar";
 import Table from "./component/chart/Table"
+import MainPage from "./page/MainPage"
 
 function App() {
   return (
@@ -13,12 +14,7 @@ function App() {
             sNum={"9"}
         />
         <div className="App-header">
-            <div className="Graph">
-                <BarChart />
-            </div>
-            <div className="List">
-                <Table />
-            </div>
+            <MainPage />
         </div>
     </div>
   );

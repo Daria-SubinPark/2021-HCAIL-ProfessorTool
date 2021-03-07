@@ -1,0 +1,9 @@
+.Graph{
+    width: 100vh;
+}
+
+.List{
+    width: 100vh;
+    margin-top: 5vh;
+    align-items: center;
+}
