@@ -1,9 +1,6 @@
 import React from "react";
 import './App.css';
-import './component/chart/BarChart'
-import BarChart from "./component/chart/BarChart";
 import MainBar from "./component/common/MainBar";
-import Table from "./component/chart/Table"
 import MainPage from "./page/MainPage"
 
 function App() {

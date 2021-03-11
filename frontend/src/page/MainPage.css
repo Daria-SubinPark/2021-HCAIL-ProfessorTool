@@ -1,9 +1,17 @@
 .Graph{
     width: 100vh;
+    margin-top: 5vh;
 }
 
 .List{
     width: 100vh;
     margin-top: 5vh;
     align-items: center;
+}
+
+.WCloud{
+    border-width: 60px;
+    background-color: #f5fcfb;
+    margin-top: 5vh;
+    padding: 5vh;
 }
