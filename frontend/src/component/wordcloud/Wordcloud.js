@@ -2,32 +2,22 @@ import React, { useMemo, useState, useEffect } from 'react';
 import ReactWordcloud from 'react-wordcloud';
 import { v4 as uuidv4 } from 'uuid';
 
-import { content as initialContent } from './data';
+import { content as initialContent } from '../metadata/question';
 import { tokenizeWords } from './nlp';
-import {sliceData} from "./slice";
+import { sliceData, columns, subQuestion } from "./slice";
+
+import Table from "../chart/Table";
 
 export const initialSettings = {
     content: {
         allowNumbers: false,
-        maxWords: 100,
+        maxWords: 50,
         stemmer: null,
         stopwordsInput: '',
     },
     wordcloud: {
-        colors: [
-            '#1f77b4',
-            '#ff7f0e',
-            '#2ca02c',
-            '#d62728',
-            '#9467bd',
-            '#8c564b',
-            '#e377c2',
-            '#7f7f7f',
-            '#bcbd22',
-            '#17becf',
-        ],
         fontFamily: 'times new roman',
-        fontSizes: [8, 64],
+        fontSizes: [20, 64],
         padding: 1,
         rotations: 2,
         rotationAngles: [-90, 0],
@@ -78,11 +68,18 @@ const Wordcloud = () => {
 
 
     return (
-        <ReactWordcloud
-            options={wordcloudOptions}
-            words={words}
-            callbacks={wordcloudCallbacks}
-        />
+        <div>
+            <ReactWordcloud
+                options={wordcloudOptions}
+                words={words}
+                callbacks={wordcloudCallbacks}
+            />
+            <Table
+                columns={columns}
+                rows={sentence}
+                subQuestion={subQuestion}
+            />
+        </div>
     );
 }
 
