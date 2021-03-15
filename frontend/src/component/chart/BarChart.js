@@ -3,7 +3,8 @@ import { Bar } from 'react-chartjs-2';
 
 const BarChart = ({testQuestion, testAnswer, testAnswerNumber}) => {
 
-    let rankColor = ["#d6d6d6", "#d6d6d6", "#d6d6d6", "#11b288", "#d6d6d6"]
+    let rankColor = ["#d6d6d6", "#d6d6d6",
+        "#d6d6d6", "#11b288", "#d6d6d6"]
 
     const options = {
         legend: {

@@ -3,6 +3,7 @@ import ButtonSet from '../component/common/ButtonSet'
 import BarChart from "../component/chart/BarChart";
 import Table from "../component/chart/Table";
 import Wordcloud from "../component/wordcloud/Wordcloud"
+import PieChart from "../component/chart/PieChart";
 
 import {testQuestion, testAnswer, testAnswerNumber} from "../component/metadata/multipleChoice"
 import {mulQuestion, mulAnswer, mulAnswerNumber} from "../component/metadata/multipleQuestion";
@@ -15,9 +16,12 @@ import './MainPage.css';
 
 const MainPage = () => {
     const [pageNumber, setPageNumber] = useState('');
+
     const [chart, setChart] = useState(false);
     const [table, setTable] = useState(false);
     const [wordCloud, setWordCloud] = useState(false);
+    const [pie, setPie] = useState(false);
+
     const [chartData, setChartData] = useState(['',[],[]]);
     const [listData, setListData] = useState([[],[],'']);
 
@@ -28,14 +32,15 @@ const MainPage = () => {
             setChart(true);
             setTable(false);
             setWordCloud(false);
+            setPie(false);
         }
-
         if(pageNumber === '2')
         {
             setListData([columns, rows,subQuestion])
             setChart(false);
             setTable(true);
             setWordCloud(false);
+            setPie(false);
         }
         if(pageNumber === '3')
         {
@@ -43,27 +48,31 @@ const MainPage = () => {
             setChart(true);
             setTable(false);
             setWordCloud(false);
+            setPie(false);
         }
         if(pageNumber === '4')
         {
             setChart(false);
             setTable(false);
             setWordCloud(true);
+            setPie(false);
         }
         if(pageNumber === '5')
         {
             setChartData([starQuestion, starAnswer, starAnswerNumber]);
-            setChart(true);
+            setChart(false);
             setTable(false);
             setWordCloud(false);
+            setPie(true);
         }
         if(pageNumber === '6')
         {
             setChartData([starQuestion, starAnswer, starAnswerNumber]);
             setListData([starColumns, starRows, ''])
-            setChart(true);
+            setChart(false);
             setTable(true);
             setWordCloud(false);
+            setPie(true);
         }
     },[pageNumber]);
 
@@ -86,6 +95,17 @@ const MainPage = () => {
                 wordCloud ?(
                     <div className="WCloud">
                         <Wordcloud />
+                    </div>
+                ):(<div />)
+            }
+            {
+                pie ?(
+                    <div className="Graph">
+                        <PieChart
+                            testQuestion={chartData[0]}
+                            testAnswer={chartData[1]}
+                            testAnswerNumber={chartData[2]}
+                        />
                     </div>
                 ):(<div />)
             }

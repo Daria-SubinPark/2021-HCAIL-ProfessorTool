@@ -1,12 +1,12 @@
 export const starQuestion = '오늘 수업을 얼마나 이해했나요?'
 
-export const starAnswerNumber = [0,1,1,5,2]
+export const starAnswerNumber = [1,2,3,5,2]
 
-export const starAnswer = ['1','2','3','4','5']
+export const starAnswer = ['★1','★2','★3','★4','★5']
 
 export const starColumns = [
     { field: 'id', headerName: '#', width: 70 },
-    { field: 'star', headerName: 'Star', width: 100 },
+    { field: 'star', headerName: '★', width: 100 },
     {
         field: 'answer',
         headerName: 'Reason',
